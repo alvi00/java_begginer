@@ -1,0 +1,45 @@
+package alvi1;
+import java.util.*;
+public class alvi1 
+{
+	public static void main(String args[])
+	{
+		int a,b;
+		Scanner alvi=new Scanner(System.in);
+		int add,sub,mul,div,mod;
+		System.out.println("Enter the first number");
+		a=alvi.nextInt();
+		System.out.println("Enter the Second number");
+		b=alvi.nextInt();
+		String operator;
+		Scanner alvi1=new Scanner(System.in);
+		System.out.println("Enter the operator");
+		operator=alvi1.nextLine();
+		switch(operator){
+			case "+":
+				add=a+b;
+				System.out.println("addition is "+add);
+				break;
+			case "-":
+				sub=a-b;
+				System.out.println("sub is "+sub);
+				break;
+			case "*":
+				mul=a*b;
+				System.out.println("mul is "+mul);
+				break;
+			case "/":
+				div=a/b;
+				System.out.println("div is "+div);
+				break;
+			case "%":
+				mod=a%b;
+				System.out.println("mod is "+mod);
+				break;
+			
+		}
+
+		
+	
+	}
+}
