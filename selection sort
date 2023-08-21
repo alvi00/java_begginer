@@ -1,0 +1,40 @@
+package selection_sort;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author 88014
+ */
+public class Selection_sort {
+
+    public static void main(String[] args) {
+        System.out.println("Enter the size of the array");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter the array");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        
+        for(int i=0;i<n-1;i++){
+            int low=i;
+            for(int j=i+1;j<n;j++){
+                if(arr[low]<arr[j]){
+                    low=j;
+                }
+                
+            }
+            int temp=arr[i];
+            arr[i]=arr[low];
+            arr[low]=temp;
+        }
+           for(int i=0;i<n;i++){
+                        System.out.print(arr[i]+"  ");
+                }
+
+    }
+       
+}
