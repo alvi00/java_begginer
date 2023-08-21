@@ -1,0 +1,44 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package sub_array;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author 88014
+ */
+public class Sub_array {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+               System.out.println("Enter the size of array");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println("Enter the array");
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+
+            
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                int sum=0;
+                for(int m=i;m<=j;m++){
+                    sum=sum+arr[m];
+                }
+                for(int k=i;k<=j;k++){
+                        System.out.print(arr[k]+"  ");
+                }
+                 System.out.println("sum of this line is "+sum);
+                System.out.println("");
+            }
+        }
+    }
+    
+}
