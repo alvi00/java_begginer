@@ -1,0 +1,45 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package array_reverse;
+
+
+
+
+
+import java.util.*;
+public class Array_reverse {
+        
+    public static void reverse(int arr[]){
+        int low=0;int high=arr.length-1;
+        while(low<high){
+            //swap
+            int temp=arr[low];
+            arr[low]=arr[high];
+            arr[high]=temp;
+            
+            low++;
+            high--;
+        }
+    }
+    
+    
+    
+    public static void main(String[] args) {
+        System.out.println("Enter the size of array");
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.println("Enter the array");
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        reverse(arr);
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+"   ");
+        }
+            
+    }
+    
+}
