@@ -1,0 +1,178 @@
+package small.and.largest.in.array;
+
+import java.util.*;
+
+public class SmallAndLargestInArray {
+//This part is to only take the input from user
+
+    public static void input(int arr[][]) {
+        System.out.println("Enter the matrix");
+        Scanner sc = new Scanner(System.in);
+        int n = arr.length;
+        int m = arr[0].length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+    }
+//This part is to print the matrix to console
+
+    public static void output(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(arr[i][j] + "  ");
+            }
+            System.out.println("");
+        }
+    }
+
+    //This part is to get and print the sum of each row
+    public static void sum_row(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+        int sum_row_arr[] = new int[n];
+        int sum;
+        for (int i = 0; i < n; i++) {
+            sum = 0;
+            for (int j = 0; j < m; j++) {
+                sum = sum + arr[i][j];
+            }
+            sum_row_arr[i] = sum;
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println("The sum of " + (i + 1) + " row is " + sum_row_arr[i]);
+        }
+    }
+
+    //This part is to get and print the sum of coloums
+    public static void sum_col(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+        int sum_col_arr[] = new int[m];
+
+        for (int j = 0; j < m; j++) {
+            int sum = 0;
+            for (int i = 0; i < n; i++) {
+                sum = sum + arr[i][j];
+            }
+            sum_col_arr[j] = sum;
+        }
+        for (int j = 0; j < m; j++) {
+            System.out.println("The sum of " + (j + 1) + " coloum is " + sum_col_arr[j]);
+        }
+    }
+
+    //This part is to print the sum right diagonal
+    public static void sum_right_diagonal(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j <= i; j++) {
+                sum = sum + arr[i][j];
+            }
+        }
+        System.out.println("The sum of the right diagonal is " + sum);
+
+    }
+
+    //This part is to get the left diagonal sum
+    public static void sum_left_diagonal(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if ((i + j) == n - 1) {
+                    sum = sum + arr[i][j];
+                }
+            }
+        }
+        System.out.println("The sum of left diagonal is " + sum);
+    }
+
+    //This part is to print the transpost of a matrix
+    public static void transpose(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+        int matrix[][] = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                matrix[i][j] = arr[j][i];
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(matrix[i][j] + "  ");
+            }
+            System.out.println("");
+        }
+    }
+
+//This is the main method
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the rows");
+        int n = sc.nextInt();
+        System.out.println("Enter the coloms");
+        int m = sc.nextInt();
+
+        int arr[][] = new int[n][m];
+
+        input(arr);
+
+        System.out.println("The original matrix is ");
+        System.out.println("");
+        System.out.println("");
+        for (int i = 0; i < 30; i++) {
+            System.out.print("-");
+        }
+        System.out.println("");
+        System.out.println("");
+        output(arr);
+        System.out.println("The sum of every row is below ");
+        System.out.println("");
+        System.out.println("");
+        sum_row(arr);
+        for (int i = 0; i < 30; i++) {
+            System.out.print("-");
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The sum of every coloum is below ");
+        System.out.println("");
+        System.out.println("");
+        sum_col(arr);
+        for (int i = 0; i < 30; i++) {
+            System.out.print("-");
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The sum of right diagonal is below ");
+        System.out.println("");
+        System.out.println("");
+        sum_right_diagonal(arr);
+        for (int i = 0; i < 30; i++) {
+            System.out.print("-");
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The sum of left diagonal is below ");
+        System.out.println("");
+        System.out.println("");
+        sum_left_diagonal(arr);
+        for (int i = 0; i < 30; i++) {
+            System.out.print("-");
+        }
+        System.out.println("");
+        System.out.println("");
+        System.out.println("The transpose of the matrix  is below ");
+        System.out.println("");
+        System.out.println("");
+        transpose(arr);
+    }
+}
