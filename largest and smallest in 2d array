@@ -1,0 +1,74 @@
+package small.and.largest.in.array;
+
+import java.util.*;
+
+public class SmallAndLargestInArray {
+
+    public static void input(int arr[][]) {
+        System.out.println("Enter the matrix");
+        Scanner sc = new Scanner(System.in);
+        int n = arr.length;
+        int m = arr[0].length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+    }
+
+    public static void output(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(arr[i][j] + "  ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void largest_arr(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+        int largest = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (arr[i][j] > largest) {
+                    largest = arr[i][j];
+                }
+            }
+        }
+        System.out.println("The largest number is " + largest);
+    }
+
+    public static void smallest_arr(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+        int smallest = arr[0][0];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (arr[i][j] < smallest) {
+                    smallest = arr[i][j];
+                }
+            }
+        }
+        System.out.println("The smallest number is "+smallest);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the rows");
+        int n = sc.nextInt();
+        System.out.println("Enter the coloms");
+        int m = sc.nextInt();
+
+        int arr[][] = new int[n][m];
+
+        input(arr);
+        output(arr);
+        largest_arr(arr);
+        smallest_arr(arr);
+
+    }
+
+}
