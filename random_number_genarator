@@ -1,0 +1,17 @@
+
+package random_num;
+import java.util.*;
+public class Random_num {
+    
+    public static void main(String[] args) {
+        
+        int a=10;
+        int b=50;
+        int arr[]=new int[100];
+        for(int i=0;i<10;i++){
+            arr[i]=(int)(Math.random()*(b-a)+a);
+        }
+        System.out.println(arr[0]);
+    }
+    
+}
