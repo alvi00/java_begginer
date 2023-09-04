@@ -1,0 +1,49 @@
+package oops;
+
+import java.util.*;
+
+public class Oops {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Backaccount b1 = new Backaccount();
+        b1.setpassword("1234"); 
+        for (;;) {
+            
+            System.out.println("Enter the password");
+            String a = sc.next();
+            if (a.equals("0")) {
+                break;
+            }
+            if (b1.check_password(a)) {
+                System.out.println("Enter the amount of your money");
+                b1.money = sc.nextInt();
+                System.out.println("Your amount of money is " + b1.money);
+            } else {
+                System.out.println("You have to change your password");
+                System.out.println("Enter your password");
+                String b = sc.next();
+                b1.setpassword(b);
+                System.out.println("Your password is changed");
+            }
+            System.out.println("\n\n");
+            System.out.println("Press 0 to stop the program\n\n");
+        }
+        
+    }
+    
+}
+
+class Backaccount {
+    
+    private String password;
+    public int money;
+    
+    public void setpassword(String newpassword) {
+        password = newpassword;
+    }
+    public boolean check_password(String a){
+        return password.equals(a);
+    }
+    
+}
