@@ -1,0 +1,30 @@
+
+package oops;
+import java.util.*;
+public class Oops {
+
+    public static void main(String[] args) {
+        Pen p1=new Pen();
+        System.out.println("Enter the color of the pen");
+        Scanner sc=new Scanner(System.in);
+        String colorpen=sc.next();
+        p1.setcolor(colorpen);
+        System.out.println("Enter the tip size of the pen");
+         int tipofpen=sc.nextInt();
+         p1.settip(tipofpen);
+        System.out.println("The color of the pen is "+p1.color);
+        System.out.println("The tip size of the pen is "+p1.tip);
+    }
+    
+}
+
+class Pen{
+    String color;
+    int tip;
+    void setcolor(String newcolor){
+        color=newcolor;
+    }
+    void settip(int newtip){
+        tip=newtip;
+    }
+}
