@@ -1,0 +1,43 @@
+package oops2;
+
+import java.util.*;
+
+public class Oops2 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        pen p1 = new pen();
+        System.out.println("Enter the name of the pen");
+        String a = sc.next();
+        p1.setname(a);
+        System.out.println("Enter the price of the pen");
+        int b = sc.nextInt();
+        p1.setprice(b);
+        System.out.println("The name of the pen is " + p1.getname());
+        System.out.println("The price of the pen is " + p1.getprice());
+
+    }
+
+}
+
+class pen {
+
+    private int price;
+    private String name;
+
+    public void setprice(int price) {
+        this.price = price;
+    }
+
+    public void setname(String name) {
+        this.name = name;
+    }
+
+    public String getname() {
+        return this.name;
+    }
+
+    public int getprice() {
+        return this.price;
+    }
+}
