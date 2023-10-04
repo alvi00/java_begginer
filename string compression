@@ -1,0 +1,33 @@
+package sunstring;
+
+import java.util.*;
+
+public class Sunstring {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        StringBuilder alvi = new StringBuilder();
+        String str = sc.next();
+        int count = 1;
+        for (int i = 0; i < str.length() - 1; i++) {
+
+            if (str.charAt(i) == str.charAt(i + 1)) {
+                count++;
+            } else if (str.charAt(i) != str.charAt(i + 1)) {
+                alvi.append(str.charAt(i));
+                if (count != 1) {
+                    alvi.append(count);
+                }
+                count = 1;
+            }
+
+        }
+        alvi.append(str.charAt(str.length() - 1));
+        if (count != 1) {
+            alvi.append(count);
+        }
+        System.out.println(alvi);
+
+    }
+
+}
