@@ -1,0 +1,29 @@
+package sunstring;
+
+import java.util.*;
+
+public class Sunstring {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+
+        System.out.println(alvi(str1));
+
+    }
+
+    public static String alvi(String anas) {
+        StringBuilder str = new StringBuilder();
+        str.append(Character.toUpperCase(anas.charAt(0)));
+        for (int i = 1; i < anas.length(); i++) {
+            if (anas.charAt(i) == ' ') {
+                str.append(anas.charAt(i));
+                i++;
+                str.append(Character.toUpperCase(anas.charAt(i)));
+            } else {
+                str.append(anas.charAt(i));
+            }
+        }
+        return str.toString();
+    }
